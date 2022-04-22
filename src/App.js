@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import { ApiService } from './services/ApiService';
+import { BOT_URL } from './config/index'
 
 function App() {
   return (
@@ -9,14 +11,22 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div href=''
+          // OnTouchStart={(event) => {
+          //   event.preventDefault()
+          //   const apiService = new ApiService(BOT_URL, {})
+          //   const data = 'COOLIO, ITS WORKS!!'
+          //   apiService.execute('api/demo', 'POST', { data })
+          // }}
+          onClick={(event) => {
+            event.preventDefault()
+            const apiService = new ApiService(BOT_URL, {})
+            const data = 'COOLIO, ITS WORKS!!'
+            apiService.execute('api/demo', 'POST', { data })
+          }}
         >
-          Learn React
-        </a>
+          Click HERE!
+        </div>
       </header>
     </div>
   );
